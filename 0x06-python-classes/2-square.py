@@ -2,22 +2,20 @@
 ''' Square Module'''
 
 class Square:
-''' Creating an Object template '''
+''' Defines a square.'''
 
     def __init__(self, size = 0):
-        '''
-            The init method initializes the class instance
+        '''Constructor.
 
-        @self:
-            A parameter used to refer to the class instance
+        Args:
+            size: Length of a side of the square.
 
-        @size:
-            The size of the square, must be a +ve integer
+        Raises:
+            TypeError: If size is not an integer
+            ValueError: If size is less than 0
         '''
-        if type(size) is int:
-            if size < 0:
-                raise ValueError('Size must be >= 0')
-            else:
-                self.__size = size
-        else:
-            raise TypeError('Size must be an integer')i
+        if not isinstance(size, int):
+            raise TyrpeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = size
